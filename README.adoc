@@ -1,2 +1,8 @@
 # QueryIT
 QueryIT is a platform which manipulate data from a database. Project for Database Course.
+
+# Stack Used
+
+* Java 17
+* Spring 2.5.2
+* Postgres

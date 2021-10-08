@@ -6,3 +6,10 @@ QueryIT is a platform which manipulate data from a database. Project for Databas
 * Java 17
 * Spring 2.5.2
 * Postgres
+
+# Implementation
+* Avoid pitfalls hibernate & lombok: https://thorben-janssen.com/lombok-hibernate-how-to-avoid-common-pitfalls/
+- Don’t Use @EqualsAndHashCode
+- Be Careful with @ToString (Not use on @OneToMany and @ManyToOne)
+- Avoid @Data
+- Every Entity class should implement Serializable

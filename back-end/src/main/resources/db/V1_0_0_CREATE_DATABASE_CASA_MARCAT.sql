@@ -1,23 +1,30 @@
 CREATE TABLE IF NOT EXISTS
-    type_pay(
-                id SERIAL, type VARCHAR,
-                PRIMARY KEY (id)
+    type_pay
+(
+    id   SERIAL,
+    type VARCHAR,
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS
-    type_status(
-                   id SERIAL, type VARCHAR,
-                   PRIMARY KEY (id)
+    type_status
+(
+    id   SERIAL,
+    type VARCHAR,
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS
-    case_marcat(
-        id SERIAL, numar_casa_marcat SERIAL,
-        bani_locali_casa_marcat FLOAT, type_pay_id SERIAL,
-        type_status_id SERIAL,
-        PRIMARY KEY (id),
-        CONSTRAINT fk_type_pay FOREIGN KEY (type_pay_id) REFERENCES type_pay(id),
-        CONSTRAINT fk_type_status FOREIGN KEY (type_status_id) REFERENCES type_status(id)
+    case_marcat
+(
+    id                      SERIAL,
+    numar_casa_marcat       SERIAL,
+    bani_locali_casa_marcat FLOAT,
+    type_pay_id             SERIAL,
+    type_status_id          SERIAL,
+    PRIMARY KEY (id),
+    CONSTRAINT fk_type_pay FOREIGN KEY (type_pay_id) REFERENCES type_pay (id),
+    CONSTRAINT fk_type_status FOREIGN KEY (type_status_id) REFERENCES type_status (id)
 );
 
 INSERT INTO type_pay(type)

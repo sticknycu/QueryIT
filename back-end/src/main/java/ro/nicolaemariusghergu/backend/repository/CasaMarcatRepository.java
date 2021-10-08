@@ -1,10 +1,8 @@
 package ro.nicolaemariusghergu.backend.repository;
 
-import com.sun.istack.NotNull;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
-import reactor.util.annotation.NonNullApi;
 import ro.nicolaemariusghergu.backend.model.CasaMarcat;
 import ro.nicolaemariusghergu.backend.model.enums.TypePay;
 import ro.nicolaemariusghergu.backend.model.enums.TypeStatus;

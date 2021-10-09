@@ -2,8 +2,8 @@ package ro.nicolaemariusghergu.backend.service.impl;
 
 import org.springframework.stereotype.Service;
 import ro.nicolaemariusghergu.backend.model.CasaMarcat;
-import ro.nicolaemariusghergu.backend.model.enums.TypePay;
-import ro.nicolaemariusghergu.backend.model.enums.TypeStatus;
+import ro.nicolaemariusghergu.backend.model.TypePay;
+import ro.nicolaemariusghergu.backend.model.TypeStatus;
 import ro.nicolaemariusghergu.backend.repository.CasaMarcatRepository;
 import ro.nicolaemariusghergu.backend.service.CasaMarcatService;
 

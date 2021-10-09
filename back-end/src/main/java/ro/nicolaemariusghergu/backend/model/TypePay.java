@@ -1,4 +1,4 @@
-package ro.nicolaemariusghergu.backend.model.enums;
+package ro.nicolaemariusghergu.backend.model;
 
 import lombok.*;
 import org.hibernate.Hibernate;
@@ -16,8 +16,8 @@ import java.util.Objects;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "type_status")
-public class TypeStatus implements Serializable {
+@Table(name = "type_pay")
+public class TypePay implements Serializable {
 
     @Id
     @Column(name = "id", nullable = false)
@@ -30,8 +30,8 @@ public class TypeStatus implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        TypeStatus that = (TypeStatus) o;
-        return id != null && Objects.equals(id, that.id);
+        TypePay typePay = (TypePay) o;
+        return id != null && Objects.equals(id, typePay.id);
     }
 
     @Override

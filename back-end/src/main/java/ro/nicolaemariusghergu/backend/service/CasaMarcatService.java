@@ -1,8 +1,8 @@
 package ro.nicolaemariusghergu.backend.service;
 
 import ro.nicolaemariusghergu.backend.model.CasaMarcat;
-import ro.nicolaemariusghergu.backend.model.enums.TypePay;
-import ro.nicolaemariusghergu.backend.model.enums.TypeStatus;
+import ro.nicolaemariusghergu.backend.model.TypePay;
+import ro.nicolaemariusghergu.backend.model.TypeStatus;
 
 import java.util.Optional;
 

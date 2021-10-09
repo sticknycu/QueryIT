@@ -2,8 +2,6 @@ package ro.nicolaemariusghergu.backend.model;
 
 import lombok.*;
 import org.hibernate.Hibernate;
-import ro.nicolaemariusghergu.backend.model.enums.TypePay;
-import ro.nicolaemariusghergu.backend.model.enums.TypeStatus;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -17,6 +15,8 @@ import java.util.Objects;
 @AllArgsConstructor
 @Table(name = "case_marcat")
 public class CasaMarcat extends Entity implements Serializable {
+
+    private static final String NAME = "Casa de Marcat";
 
     @Id
     @Column(name = "id", nullable = false)
@@ -49,5 +49,10 @@ public class CasaMarcat extends Entity implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    @Override
+    public String getName() {
+        return NAME;
     }
 }

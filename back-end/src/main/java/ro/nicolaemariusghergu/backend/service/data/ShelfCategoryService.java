@@ -1,6 +1,5 @@
 package ro.nicolaemariusghergu.backend.service.data;
 
-import ro.nicolaemariusghergu.backend.model.Shelf;
 import ro.nicolaemariusghergu.backend.model.data.ShelfCategory;
 
 import java.util.List;

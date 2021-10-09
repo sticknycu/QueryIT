@@ -9,7 +9,8 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public record ShelfCategoryServiceImpl(ShelfCategoryRepository shelfCategoryRepository) implements ShelfCategoryService {
+public record ShelfCategoryServiceImpl(
+        ShelfCategoryRepository shelfCategoryRepository) implements ShelfCategoryService {
 
     @Override
     public Optional<ShelfCategory> findById(Long id) {

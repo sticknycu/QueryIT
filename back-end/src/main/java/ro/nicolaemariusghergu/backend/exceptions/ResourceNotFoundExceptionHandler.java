@@ -21,5 +21,6 @@ public class ResourceNotFoundExceptionHandler extends ResponseEntityExceptionHan
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
                 .contentType(MediaType.APPLICATION_JSON)
-                .build();}
+                .build();
+    }
 }

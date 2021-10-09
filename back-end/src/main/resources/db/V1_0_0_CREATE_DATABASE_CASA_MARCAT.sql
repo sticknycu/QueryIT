@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS
 CREATE TABLE IF NOT EXISTS
     shelf_category
 (
-    id SERIAL,
+    id   SERIAL,
     name VARCHAR,
     PRIMARY KEY (id)
 );
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS
 CREATE TABLE IF NOT EXISTS
     products
 (
-    id SERIAL,
+    id   SERIAL,
     name VARCHAR,
     PRIMARY KEY (id)
 );
@@ -33,22 +33,22 @@ CREATE TABLE IF NOT EXISTS
 CREATE TABLE IF NOT EXISTS
     shelves
 (
-    id SERIAL,
+    id          SERIAL,
     category_id SERIAL,
     products_id SERIAL,
     PRIMARY KEY (id),
-    CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES shelf_category(id),
-    CONSTRAINT fk_products_id FOREIGN KEY (products_id) REFERENCES products(id)
+    CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES shelf_category (id),
+    CONSTRAINT fk_products_id FOREIGN KEY (products_id) REFERENCES products (id)
 );
 
 CREATE TABLE IF NOT EXISTS
     cash_register
 (
-    id                      SERIAL,
-    cash_register_number       SERIAL,
+    id                        SERIAL,
+    cash_register_number      SERIAL,
     local_money_cash_register FLOAT,
-    type_pay_id             SERIAL,
-    type_status_id          SERIAL,
+    type_pay_id               SERIAL,
+    type_status_id            SERIAL,
     PRIMARY KEY (id),
     CONSTRAINT fk_type_pay FOREIGN KEY (type_pay_id) REFERENCES type_pay (id),
     CONSTRAINT fk_type_status FOREIGN KEY (type_status_id) REFERENCES type_status (id)
@@ -129,20 +129,24 @@ VALUES ('Produse pentru scoala');
 
 
 INSERT INTO shelves(category_id, products_id)
-SELECT shelf_category.id, products.id FROM shelf_category
-INNER JOIN products ON products.name='Piper'
+SELECT shelf_category.id, products.id
+FROM shelf_category
+         INNER JOIN products ON products.name = 'Piper'
 WHERE shelf_category.name = 'Condimente';
 
 INSERT INTO shelves(category_id, products_id)
-SELECT shelf_category.id, products.id FROM shelf_category
-INNER JOIN products ON products.name='Boia'
+SELECT shelf_category.id, products.id
+FROM shelf_category
+         INNER JOIN products ON products.name = 'Boia'
 WHERE shelf_category.name = 'Condimente';
 
 INSERT INTO shelves(category_id, products_id)
-SELECT shelf_category.id, products.id FROM shelf_category
-INNER JOIN products ON products.name='Patrunjel Uscat'
+SELECT shelf_category.id, products.id
+FROM shelf_category
+         INNER JOIN products ON products.name = 'Patrunjel Uscat'
 WHERE shelf_category.name = 'Condimente';
 INSERT INTO shelves(category_id, products_id)
-SELECT shelf_category.id, products.id FROM shelf_category
-INNER JOIN products ON products.name='Marar Uscat'
+SELECT shelf_category.id, products.id
+FROM shelf_category
+         INNER JOIN products ON products.name = 'Marar Uscat'
 WHERE shelf_category.name = 'Condimente';

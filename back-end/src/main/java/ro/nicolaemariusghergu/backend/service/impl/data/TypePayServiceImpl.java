@@ -1,9 +1,9 @@
-package ro.nicolaemariusghergu.backend.service.impl;
+package ro.nicolaemariusghergu.backend.service.impl.data;
 
 import org.springframework.stereotype.Service;
-import ro.nicolaemariusghergu.backend.model.TypePay;
-import ro.nicolaemariusghergu.backend.repository.TypePayRepository;
-import ro.nicolaemariusghergu.backend.service.TypePayService;
+import ro.nicolaemariusghergu.backend.model.data.TypePay;
+import ro.nicolaemariusghergu.backend.repository.data.TypePayRepository;
+import ro.nicolaemariusghergu.backend.service.data.TypePayService;
 
 import java.util.Optional;
 

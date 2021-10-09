@@ -1,7 +1,6 @@
-package ro.nicolaemariusghergu.backend.model;
+package ro.nicolaemariusghergu.backend.model.data;
 
 import lombok.*;
-import org.hibernate.Hibernate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,22 +15,22 @@ import java.util.Objects;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "type_status")
-public class TypeStatus implements Serializable {
+@Table(name = "shelf_category")
+public class ShelfCategory implements Serializable {
 
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "type", nullable = false)
-    private String type;
+    @Column(name = "name")
+    private String name;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        TypeStatus that = (TypeStatus) o;
-        return id != null && Objects.equals(id, that.id);
+        if (o == null || getClass() != o.getClass()) return false;
+        ShelfCategory that = (ShelfCategory) o;
+        return id.equals(that.id);
     }
 
     @Override

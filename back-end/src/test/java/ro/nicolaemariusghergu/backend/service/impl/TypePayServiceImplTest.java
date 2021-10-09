@@ -4,8 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import ro.nicolaemariusghergu.backend.exceptions.ResourceNotFoundException;
-import ro.nicolaemariusghergu.backend.model.TypePay;
-import ro.nicolaemariusghergu.backend.service.TypePayService;
+import ro.nicolaemariusghergu.backend.model.data.TypePay;
+import ro.nicolaemariusghergu.backend.service.data.TypePayService;
 
 import java.util.Optional;
 

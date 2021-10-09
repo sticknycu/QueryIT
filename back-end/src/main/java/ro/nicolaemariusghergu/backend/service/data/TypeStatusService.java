@@ -1,6 +1,6 @@
-package ro.nicolaemariusghergu.backend.service;
+package ro.nicolaemariusghergu.backend.service.data;
 
-import ro.nicolaemariusghergu.backend.model.TypeStatus;
+import ro.nicolaemariusghergu.backend.model.data.TypeStatus;
 
 import java.util.Optional;
 

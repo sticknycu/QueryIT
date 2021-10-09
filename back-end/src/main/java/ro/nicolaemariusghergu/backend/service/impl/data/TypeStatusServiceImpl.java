@@ -1,9 +1,9 @@
-package ro.nicolaemariusghergu.backend.service.impl;
+package ro.nicolaemariusghergu.backend.service.impl.data;
 
 import org.springframework.stereotype.Service;
-import ro.nicolaemariusghergu.backend.model.TypeStatus;
-import ro.nicolaemariusghergu.backend.repository.TypeStatusRepository;
-import ro.nicolaemariusghergu.backend.service.TypeStatusService;
+import ro.nicolaemariusghergu.backend.model.data.TypeStatus;
+import ro.nicolaemariusghergu.backend.repository.data.TypeStatusRepository;
+import ro.nicolaemariusghergu.backend.service.data.TypeStatusService;
 
 import java.util.Optional;
 

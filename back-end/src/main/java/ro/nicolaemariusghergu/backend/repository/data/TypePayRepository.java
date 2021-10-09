@@ -1,9 +1,9 @@
-package ro.nicolaemariusghergu.backend.repository;
+package ro.nicolaemariusghergu.backend.repository.data;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
-import ro.nicolaemariusghergu.backend.model.TypePay;
+import ro.nicolaemariusghergu.backend.model.data.TypePay;
 
 import java.util.Optional;
 

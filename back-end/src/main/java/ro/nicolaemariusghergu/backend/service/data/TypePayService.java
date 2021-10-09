@@ -1,6 +1,6 @@
-package ro.nicolaemariusghergu.backend.service;
+package ro.nicolaemariusghergu.backend.service.data;
 
-import ro.nicolaemariusghergu.backend.model.TypePay;
+import ro.nicolaemariusghergu.backend.model.data.TypePay;
 
 import java.util.Optional;
 

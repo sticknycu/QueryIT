@@ -4,33 +4,32 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import ro.nicolaemariusghergu.backend.exceptions.ResourceNotFoundException;
-import ro.nicolaemariusghergu.backend.model.CasaMarcat;
-import ro.nicolaemariusghergu.backend.model.TypePay;
-import ro.nicolaemariusghergu.backend.model.TypeStatus;
-import ro.nicolaemariusghergu.backend.repository.CasaMarcatRepository;
-import ro.nicolaemariusghergu.backend.service.CasaMarcatService;
+import ro.nicolaemariusghergu.backend.model.CashRegister;
+import ro.nicolaemariusghergu.backend.model.data.TypePay;
+import ro.nicolaemariusghergu.backend.model.data.TypeStatus;
+import ro.nicolaemariusghergu.backend.service.CashRegisterService;
 
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
-class CasaMarcatServiceImplTest {
+class CashRegisterServiceImplTest {
 
     private static final Long ID = 1L;
     private static final Integer NUMBER = 2;
 
     @Autowired
-    CasaMarcatService casaMarcatService;
+    CashRegisterService cashRegisterService;
 
     @Test
     void whenFindByIdthenReturnCasaMarcat() {
         // given
-        CasaMarcat casaMarcat = new CasaMarcat();
-        casaMarcat.setId(ID);
+        CashRegister cashRegister = new CashRegister();
+        cashRegister.setId(ID);
 
         // when - Without Mock
-        Optional<CasaMarcat> found = casaMarcatService.findById(casaMarcat.getId());
+        Optional<CashRegister> found = cashRegisterService.findById(cashRegister.getId());
 
         // then
         found.ifPresentOrElse(casaMarcatFounded -> {
@@ -46,11 +45,11 @@ class CasaMarcatServiceImplTest {
     @Test
     void whenFindByNumberthenReturnCasaMarcat() {
         // given
-        CasaMarcat casaMarcat = new CasaMarcat();
-        casaMarcat.setNumber(NUMBER);
+        CashRegister cashRegister = new CashRegister();
+        cashRegister.setNumber(NUMBER);
 
         // when - Without Mock
-        Optional<CasaMarcat> found = casaMarcatService.findByNumber(casaMarcat.getNumber());
+        Optional<CashRegister> found = cashRegisterService.findByNumber(cashRegister.getNumber());
 
         // then
         found.ifPresentOrElse(casaMarcatFounded -> {
@@ -72,12 +71,12 @@ class CasaMarcatServiceImplTest {
         typePay.setId(ID);
 
         // given
-        CasaMarcat casaMarcat = new CasaMarcat();
-        casaMarcat.setTypeStatus(typeStatus);
-        casaMarcat.setTypePay(typePay);
+        CashRegister cashRegister = new CashRegister();
+        cashRegister.setTypeStatus(typeStatus);
+        cashRegister.setTypePay(typePay);
 
         // when - Without Mock
-        Optional<CasaMarcat> found = casaMarcatService.findCasaMarcatByTypeStatusAndTypePay(casaMarcat.getTypeStatus(), typePay);
+        Optional<CashRegister> found = cashRegisterService.findCasaMarcatByTypeStatusAndTypePay(cashRegister.getTypeStatus(), typePay);
 
         // then
         found.ifPresentOrElse(casaMarcatFounded -> {

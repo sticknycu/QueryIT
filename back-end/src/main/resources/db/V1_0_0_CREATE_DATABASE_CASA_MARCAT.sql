@@ -15,11 +15,38 @@ CREATE TABLE IF NOT EXISTS
 );
 
 CREATE TABLE IF NOT EXISTS
-    case_marcat
+    shelf_category
+(
+    id SERIAL,
+    name VARCHAR,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS
+    products
+(
+    id SERIAL,
+    name VARCHAR,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS
+    shelves
+(
+    id SERIAL,
+    category_id SERIAL,
+    products_id SERIAL,
+    PRIMARY KEY (id),
+    CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES shelf_category(id),
+    CONSTRAINT fk_products_id FOREIGN KEY (products_id) REFERENCES products(id)
+);
+
+CREATE TABLE IF NOT EXISTS
+    cash_register
 (
     id                      SERIAL,
-    numar_casa_marcat       SERIAL,
-    bani_locali_casa_marcat FLOAT,
+    cash_register_number       SERIAL,
+    local_money_cash_register FLOAT,
     type_pay_id             SERIAL,
     type_status_id          SERIAL,
     PRIMARY KEY (id),
@@ -41,9 +68,81 @@ VALUES ('FUNCTIONALA');
 INSERT INTO type_status(type)
 VALUES ('ASTEAPTA_OPERATOR');
 
-INSERT INTO case_marcat(numar_casa_marcat, bani_locali_casa_marcat)
+INSERT INTO cash_register(cash_register_number, local_money_cash_register)
 VALUES (1, 100);
-INSERT INTO case_marcat(numar_casa_marcat, bani_locali_casa_marcat)
+INSERT INTO cash_register(cash_register_number, local_money_cash_register)
 VALUES (2, 200);
-INSERT INTO case_marcat(numar_casa_marcat, bani_locali_casa_marcat)
+INSERT INTO cash_register(cash_register_number, local_money_cash_register)
 VALUES (3, 300);
+
+INSERT INTO products(name)
+VALUES ('Piper');
+INSERT INTO products(name)
+VALUES ('Boia');
+INSERT INTO products(name)
+VALUES ('Patrunjel Uscat');
+INSERT INTO products(name)
+VALUES ('Marar Uscat');
+
+INSERT INTO shelf_category(name)
+VALUES ('Produse 100% Naturale');
+INSERT INTO shelf_category(name)
+VALUES ('Condimente');
+INSERT INTO shelf_category(name)
+VALUES ('Bauturi Alcoolice');
+INSERT INTO shelf_category(name)
+VALUES ('Apa');
+INSERT INTO shelf_category(name)
+VALUES ('Sucuri');
+INSERT INTO shelf_category(name)
+VALUES ('Haine');
+INSERT INTO shelf_category(name)
+VALUES ('Branzeturi si lactate');
+INSERT INTO shelf_category(name)
+VALUES ('Produse de baie');
+INSERT INTO shelf_category(name)
+VALUES ('Produse de curatat');
+INSERT INTO shelf_category(name)
+VALUES ('Produse pentru corp');
+INSERT INTO shelf_category(name)
+VALUES ('Hartie igienica');
+INSERT INTO shelf_category(name)
+VALUES ('Dulciuri');
+INSERT INTO shelf_category(name)
+VALUES ('Gustari');
+INSERT INTO shelf_category(name)
+VALUES ('Uleiuri');
+INSERT INTO shelf_category(name)
+VALUES ('Peste');
+INSERT INTO shelf_category(name)
+VALUES ('Cereale');
+INSERT INTO shelf_category(name)
+VALUES ('Produse agricole fine');
+INSERT INTO shelf_category(name)
+VALUES ('Conserve');
+INSERT INTO shelf_category(name)
+VALUES ('Becuri');
+INSERT INTO shelf_category(name)
+VALUES ('Baterii');
+INSERT INTO shelf_category(name)
+VALUES ('Produse pentru scoala');
+
+
+INSERT INTO shelves(category_id, products_id)
+SELECT shelf_category.id, products.id FROM shelf_category
+INNER JOIN products ON products.name='Piper'
+WHERE shelf_category.name = 'Condimente';
+
+INSERT INTO shelves(category_id, products_id)
+SELECT shelf_category.id, products.id FROM shelf_category
+INNER JOIN products ON products.name='Boia'
+WHERE shelf_category.name = 'Condimente';
+
+INSERT INTO shelves(category_id, products_id)
+SELECT shelf_category.id, products.id FROM shelf_category
+INNER JOIN products ON products.name='Patrunjel Uscat'
+WHERE shelf_category.name = 'Condimente';
+INSERT INTO shelves(category_id, products_id)
+SELECT shelf_category.id, products.id FROM shelf_category
+INNER JOIN products ON products.name='Marar Uscat'
+WHERE shelf_category.name = 'Condimente';

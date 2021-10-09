@@ -11,14 +11,12 @@ import java.util.Objects;
 
 @Getter
 @Setter
-@javax.persistence.Entity
+@Entity
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "cash_register")
-public class CashRegister extends Entity implements Serializable {
-
-    private static final String NAME = "Casa de Marcat";
+public class CashRegister implements Serializable {
 
     @Id
     @Column(name = "id", nullable = false)
@@ -51,10 +49,5 @@ public class CashRegister extends Entity implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(id);
-    }
-
-    @Override
-    public String getName() {
-        return NAME;
     }
 }

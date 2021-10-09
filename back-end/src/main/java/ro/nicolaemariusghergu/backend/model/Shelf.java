@@ -4,9 +4,7 @@ import lombok.*;
 import ro.nicolaemariusghergu.backend.model.data.ShelfCategory;
 
 import javax.persistence.*;
-import javax.persistence.Entity;
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
 
 @Getter

@@ -27,7 +27,7 @@ public class Shelf implements Serializable {
 
     @ToString.Exclude
     @ManyToOne
-    @JoinColumn(name = "products_id", nullable = false)
+    @JoinColumn(name = "product_id", nullable = false)
     private Product products;
 
     @Override

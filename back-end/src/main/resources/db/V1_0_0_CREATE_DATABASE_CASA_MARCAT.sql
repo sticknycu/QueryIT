@@ -23,6 +23,14 @@ CREATE TABLE IF NOT EXISTS
 );
 
 CREATE TABLE IF NOT EXISTS
+    minishop_category
+(
+    id SERIAL,
+    name VARCHAR,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS
     products
 (
     id   SERIAL,
@@ -35,10 +43,21 @@ CREATE TABLE IF NOT EXISTS
 (
     id          SERIAL,
     category_id SERIAL,
-    products_id SERIAL,
+    product_id SERIAL,
     PRIMARY KEY (id),
     CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES shelf_category (id),
-    CONSTRAINT fk_products_id FOREIGN KEY (products_id) REFERENCES products (id)
+    CONSTRAINT fk_product_id FOREIGN KEY (product_id) REFERENCES products (id)
+);
+
+CREATE TABLE IF NOT EXISTS
+    minishops
+(
+    id SERIAL,
+    category_id SERIAL,
+    product_id SERIAL,
+    PRIMARY KEY (id),
+    CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES minishop_category (id),
+    CONSTRAINT fk_product_id FOREIGN KEY (product_id) REFERENCES products (id)
 );
 
 CREATE TABLE IF NOT EXISTS
@@ -84,6 +103,13 @@ VALUES ('Patrunjel Uscat');
 INSERT INTO products(name)
 VALUES ('Marar Uscat');
 
+INSERT INTO products(name)
+VALUES ('Portocale');
+INSERT INTO products(name)
+VALUES ('Cartofi');
+INSERT INTO products(name)
+VALUES ('Morcovi');
+
 INSERT INTO shelf_category(name)
 VALUES ('Produse 100% Naturale');
 INSERT INTO shelf_category(name)
@@ -127,26 +153,60 @@ VALUES ('Baterii');
 INSERT INTO shelf_category(name)
 VALUES ('Produse pentru scoala');
 
+INSERT INTO minishop_category(name)
+VALUES ('Carnagerie');
+INSERT INTO minishop_category(name)
+VALUES ('Brutarie');
+INSERT INTO minishop_category(name)
+VALUES ('Produse din peste');
+INSERT INTO minishop_category(name)
+VALUES ('Carnagerie');
+INSERT INTO minishop_category(name)
+VALUES ('Haine');
+INSERT INTO minishop_category(name)
+VALUES ('Fructe si legume');
 
-INSERT INTO shelves(category_id, products_id)
+INSERT INTO shelves(category_id, product_id)
 SELECT shelf_category.id, products.id
 FROM shelf_category
          INNER JOIN products ON products.name = 'Piper'
 WHERE shelf_category.name = 'Condimente';
 
-INSERT INTO shelves(category_id, products_id)
+INSERT INTO shelves(category_id, product_id)
 SELECT shelf_category.id, products.id
 FROM shelf_category
          INNER JOIN products ON products.name = 'Boia'
 WHERE shelf_category.name = 'Condimente';
 
-INSERT INTO shelves(category_id, products_id)
+INSERT INTO shelves(category_id, product_id)
 SELECT shelf_category.id, products.id
 FROM shelf_category
          INNER JOIN products ON products.name = 'Patrunjel Uscat'
 WHERE shelf_category.name = 'Condimente';
-INSERT INTO shelves(category_id, products_id)
+
+INSERT INTO shelves(category_id, product_id)
 SELECT shelf_category.id, products.id
 FROM shelf_category
          INNER JOIN products ON products.name = 'Marar Uscat'
 WHERE shelf_category.name = 'Condimente';
+
+
+
+
+INSERT INTO minishops(product_id, category_id)
+SELECT products.id, minishop_category.id
+FROM products
+        INNER JOIN minishop_category ON minishop_category.name='Fructe si legume'
+WHERE products.name='Cartofi';
+
+INSERT INTO minishops(product_id, category_id)
+SELECT products.id, minishop_category.id
+FROM products
+         INNER JOIN minishop_category ON minishop_category.name='Fructe si legume'
+WHERE products.name='Morcovi';
+
+INSERT INTO minishops(product_id, category_id)
+SELECT products.id, minishop_category.id
+FROM products
+         INNER JOIN minishop_category ON minishop_category.name='Fructe si legume'
+WHERE products.name='Portocale';

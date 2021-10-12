@@ -1,5 +1,6 @@
 package ro.nicolaemariusghergu.backend.service.impl.data;
 
+import org.springframework.stereotype.Service;
 import ro.nicolaemariusghergu.backend.model.data.MinishopCategory;
 import ro.nicolaemariusghergu.backend.repository.data.MinishopCategoryRepository;
 import ro.nicolaemariusghergu.backend.service.data.MinishopCategoryService;
@@ -7,6 +8,7 @@ import ro.nicolaemariusghergu.backend.service.data.MinishopCategoryService;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public record MinishopCategoryServiceImpl(MinishopCategoryRepository minishopCategoryRepository) implements MinishopCategoryService {
 
     @Override

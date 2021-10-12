@@ -1,4 +1,4 @@
-package ro.nicolaemariusghergu.backend.model;
+package ro.nicolaemariusghergu.backend.model.data;
 
 import lombok.*;
 

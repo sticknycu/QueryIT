@@ -1,6 +1,5 @@
 package ro.nicolaemariusghergu.backend.service.data;
 
-import org.springframework.lang.NonNull;
 import ro.nicolaemariusghergu.backend.model.data.MinishopCategory;
 
 import java.util.List;

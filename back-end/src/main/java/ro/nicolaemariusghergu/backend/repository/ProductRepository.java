@@ -2,7 +2,7 @@ package ro.nicolaemariusghergu.backend.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ro.nicolaemariusghergu.backend.model.Product;
+import ro.nicolaemariusghergu.backend.model.data.Product;
 
 import java.util.Optional;
 

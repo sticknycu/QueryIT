@@ -1,8 +1,8 @@
 package ro.nicolaemariusghergu.backend.model;
 
 import lombok.*;
+import ro.nicolaemariusghergu.backend.model.data.MinishopCategory;
 import ro.nicolaemariusghergu.backend.model.data.Product;
-import ro.nicolaemariusghergu.backend.model.data.ShelfCategory;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,8 +14,8 @@ import java.util.Objects;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "shelves")
-public class Shelf implements Serializable {
+@Table(name = "minishops")
+public class Minishop implements Serializable {
 
     @Id
     @Column(name = "id", nullable = false)
@@ -24,7 +24,7 @@ public class Shelf implements Serializable {
     @ToString.Exclude
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
-    private ShelfCategory shelfCategory;
+    private MinishopCategory minishopCategory;
 
     @ToString.Exclude
     @ManyToOne
@@ -35,7 +35,7 @@ public class Shelf implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Shelf shelf = (Shelf) o;
+        Minishop shelf = (Minishop) o;
         return id.equals(shelf.id);
     }
 
@@ -44,3 +44,4 @@ public class Shelf implements Serializable {
         return Objects.hash(id);
     }
 }
+

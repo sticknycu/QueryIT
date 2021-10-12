@@ -1,7 +1,7 @@
 package ro.nicolaemariusghergu.backend.service.impl.data;
 
 import org.springframework.stereotype.Service;
-import ro.nicolaemariusghergu.backend.model.Product;
+import ro.nicolaemariusghergu.backend.model.data.Product;
 import ro.nicolaemariusghergu.backend.repository.ProductRepository;
 import ro.nicolaemariusghergu.backend.service.data.ProductService;
 

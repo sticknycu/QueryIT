@@ -1,6 +1,6 @@
 package ro.nicolaemariusghergu.backend.service.data;
 
-import ro.nicolaemariusghergu.backend.model.Product;
+import ro.nicolaemariusghergu.backend.model.data.Product;
 
 import java.util.List;
 import java.util.Optional;

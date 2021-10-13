@@ -24,9 +24,9 @@ jobs:
         settings-path: ${{ github.workspace }}/back-end/ # location for the settings.xml file
 
     - name: Tests
-      run: mvn clean test --file $GITHUB_WORKSPACE/back-end/pom.xml
+      run: mvn clean test --file pom.xml
     - name: Build with Maven
-      run: mvn -B package --file $GITHUB_WORKSPACE/back-end/pom.xml
+      run: mvn -B package --file pom.xml
 
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/back-end/settings.xml

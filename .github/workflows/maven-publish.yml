@@ -25,6 +25,8 @@ jobs:
 
     - name: Tests
       run: mvn clean test --file pom.xml
+      env:
+        PROJECT_PATH: /back-end/
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
@@ -32,3 +34,4 @@ jobs:
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
       env:
         GITHUB_TOKEN: ${{ github.token }}
+        PROJECT_PATH: /back-end/

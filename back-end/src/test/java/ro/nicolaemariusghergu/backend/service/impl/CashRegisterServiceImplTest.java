@@ -34,7 +34,7 @@ class CashRegisterServiceImplTest {
         // then
         found.ifPresentOrElse(casaMarcatFounded -> {
             assertNotNull(casaMarcatFounded.getNumber());
-            assertNotNull(casaMarcatFounded.getName());
+            assertNotNull(casaMarcatFounded.getLocalMoney());
             assertNotNull(casaMarcatFounded.getTypePay());
             assertNotNull(casaMarcatFounded.getTypeStatus());
         }, () -> {
@@ -54,7 +54,7 @@ class CashRegisterServiceImplTest {
         // then
         found.ifPresentOrElse(casaMarcatFounded -> {
             assertNotNull(casaMarcatFounded.getNumber());
-            assertNotNull(casaMarcatFounded.getName());
+            assertNotNull(casaMarcatFounded.getLocalMoney());
             assertNotNull(casaMarcatFounded.getTypePay());
             assertNotNull(casaMarcatFounded.getTypeStatus());
         }, () -> {
@@ -81,7 +81,7 @@ class CashRegisterServiceImplTest {
         // then
         found.ifPresentOrElse(casaMarcatFounded -> {
             assertNotNull(casaMarcatFounded.getNumber());
-            assertNotNull(casaMarcatFounded.getName());
+            assertNotNull(casaMarcatFounded.getLocalMoney());
             assertNotNull(casaMarcatFounded.getTypePay());
             assertNotNull(casaMarcatFounded.getTypeStatus());
         }, () -> {

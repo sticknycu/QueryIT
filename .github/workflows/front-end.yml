@@ -1,72 +1,32 @@
-name: run_front-end
+name: run-front_end
 
-env:
-  node-version: 14.x
-  NODE_OPTIONS: --max_old_space_size=6144
-  NX_BRANCH: ${{ github.event.number }}
-  NX_RUN_GROUP: ${{ github.run_id }}
-
-on: [push]
+on: push
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
 
-      - name: Set up Node.js ${{ env.node-version }}
-        uses: actions/setup-node@v2
+      - name: Cache node modules
+        uses: actions/cache@v1
         with:
-          node-version: ${{ env.node-version }}
-      - name: Install PNPM
-        run: npm install --global pnpm
-        working-directory: front-end
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile --verify-store-integrity false
-        working-directory: front-end
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
-      - name: Build Angular app
-        run: pnpm build
-        working-directory: front-end
-  lint:
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up Node.js ${{ env.node-version }}
-        uses: actions/setup-node@v2
+      - name: Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          node-version: ${{ env.node-version }}
-      - name: Install PNPM
-        run: npm install --global pnpm
-        working-directory: front-end
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile --verify-store-integrity false
-        working-directory: front-end
+          node-version: ${{ matrix.node-version }}
 
-      - name: Lint workspace and projects
-        run: pnpm lint
-        working-directory: front-end
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up Node.js ${{ env.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ env.node-version }}
-      - name: Install PNPM
-        run: npm install --global pnpm
-        working-directory: front-end
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile --verify-store-integrity false
-        working-directory: front-end
-
-      - name: Test projects
-        run: pnpm test
+      - name: npm ci and npm run build
+        run: |
+          npm ci
+          npm run build:ci
         working-directory: front-end

@@ -79,6 +79,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>docker-jar-file</finalName>
 	</build>
 
 </project>

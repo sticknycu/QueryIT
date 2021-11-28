@@ -1,0 +1,72 @@
+name: run_front-end
+
+env:
+  node-version: 14.x
+  NODE_OPTIONS: --max_old_space_size=6144
+  NX_BRANCH: ${{ github.event.number }}
+  NX_RUN_GROUP: ${{ github.run_id }}
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js ${{ env.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.node-version }}
+      - name: Install PNPM
+        run: npm install --global pnpm
+        working-directory: front-end
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --verify-store-integrity false
+        working-directory: front-end
+
+      - name: Build Angular app
+        run: pnpm build
+        working-directory: front-end
+  lint:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js ${{ env.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.node-version }}
+      - name: Install PNPM
+        run: npm install --global pnpm
+        working-directory: front-end
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --verify-store-integrity false
+        working-directory: front-end
+
+      - name: Lint workspace and projects
+        run: pnpm lint
+        working-directory: front-end
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js ${{ env.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.node-version }}
+      - name: Install PNPM
+        run: npm install --global pnpm
+        working-directory: front-end
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --verify-store-integrity false
+        working-directory: front-end
+
+      - name: Test projects
+        run: pnpm test
+        working-directory: front-end

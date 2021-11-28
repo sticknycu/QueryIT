@@ -3,13 +3,24 @@ QueryIT is a platform which manipulate data from a database. Project for Databas
 
 # Stack Used
 
+### BACK-END
 * Java 17
 * Spring 2.5.2
 * Postgres
 
-# Implementation
+### FRONT-END
+* Typescript
+* Angular 13.0.3
+* Node 14.15.0
+
+
+# Implementation addons
+
+### BACK-END
 * Avoid pitfalls hibernate & lombok: https://thorben-janssen.com/lombok-hibernate-how-to-avoid-common-pitfalls/
 - Don’t Use @EqualsAndHashCode
 - Be Careful with @ToString (Not use on @OneToMany and @ManyToOne)
 - Avoid @Data
 - Every Entity class should implement Serializable
+
+### FRONT-END

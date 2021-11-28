@@ -1,0 +1,23 @@
+name: run_back-end
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Build And Run Docker Environment
+        working-directory: back-end
+        run: |
+          docker-compose up -d
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.17
+
+      - name: Test with Maven
+        run: mvn test

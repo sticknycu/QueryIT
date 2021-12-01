@@ -1,4 +1,6 @@
-# QueryIT [![Codiga](https://api.codiga.io/project/30198/score/svg)](Code Quality Score) [![Codiga](https://api.codiga.io/project/30198/status/svg)](Code Grade)
+# QueryIT
+[![Codiga](https://api.codiga.io/project/30198/score/svg)](Code Quality Score)
+[![Codiga](https://api.codiga.io/project/30198/status/svg)](Code Grade)
 QueryIT is a platform which manipulate data from a database. Project for Database Course.
 
 # Stack Used

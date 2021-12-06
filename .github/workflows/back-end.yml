@@ -19,7 +19,6 @@ jobs:
       - name: Build And Run Docker Environment
         working-directory: back-end/principal
         run: |
-          ls -a
           docker-compose up -d
 
       - name: Set up JDK 17

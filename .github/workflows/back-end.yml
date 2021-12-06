@@ -1,6 +1,6 @@
 name: run_back-end
 
-on: [push]
+on: [ push ]
 
 jobs:
   build:

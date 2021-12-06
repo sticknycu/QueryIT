@@ -1,7 +1,7 @@
 package ro.nicolaemariusghergu.queryit.service;
 
-import ro.nicolaemariusghergu.queryit.model.data.Product;
 import ro.nicolaemariusghergu.queryit.model.Shelf;
+import ro.nicolaemariusghergu.queryit.model.data.Product;
 import ro.nicolaemariusghergu.queryit.model.data.ShelfCategory;
 
 import java.util.List;

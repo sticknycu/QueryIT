@@ -9,7 +9,8 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public record MinishopCategoryServiceImpl(MinishopCategoryRepository minishopCategoryRepository) implements MinishopCategoryService {
+public record MinishopCategoryServiceImpl(
+        MinishopCategoryRepository minishopCategoryRepository) implements MinishopCategoryService {
 
     @Override
     public MinishopCategory getById(Long id) {

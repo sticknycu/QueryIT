@@ -1,8 +1,8 @@
 package ro.nicolaemariusghergu.queryit.service.impl;
 
 import org.springframework.stereotype.Service;
-import ro.nicolaemariusghergu.queryit.model.data.Product;
 import ro.nicolaemariusghergu.queryit.model.Shelf;
+import ro.nicolaemariusghergu.queryit.model.data.Product;
 import ro.nicolaemariusghergu.queryit.model.data.ShelfCategory;
 import ro.nicolaemariusghergu.queryit.repository.ShelfRepository;
 import ro.nicolaemariusghergu.queryit.service.ShelfService;

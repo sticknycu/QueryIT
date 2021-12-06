@@ -1,77 +1,166 @@
 CREATE TABLE IF NOT EXISTS
     type_pay
 (
-    id   SERIAL,
-    type VARCHAR,
-    PRIMARY KEY (id)
-);
+    id
+    SERIAL,
+    type
+    VARCHAR,
+    PRIMARY
+    KEY
+(
+    id
+)
+    );
 
 CREATE TABLE IF NOT EXISTS
     type_status
 (
-    id   SERIAL,
-    type VARCHAR,
-    PRIMARY KEY (id)
-);
+    id
+    SERIAL,
+    type
+    VARCHAR,
+    PRIMARY
+    KEY
+(
+    id
+)
+    );
 
 CREATE TABLE IF NOT EXISTS
     shelf_category
 (
-    id   SERIAL,
-    name VARCHAR,
-    PRIMARY KEY (id)
-);
+    id
+    SERIAL,
+    name
+    VARCHAR,
+    PRIMARY
+    KEY
+(
+    id
+)
+    );
 
 CREATE TABLE IF NOT EXISTS
     minishop_category
 (
-    id SERIAL,
-    name VARCHAR,
-    PRIMARY KEY (id)
-);
+    id
+    SERIAL,
+    name
+    VARCHAR,
+    PRIMARY
+    KEY
+(
+    id
+)
+    );
 
 CREATE TABLE IF NOT EXISTS
     products
 (
-    id   SERIAL,
-    name VARCHAR,
-    PRIMARY KEY (id)
-);
+    id
+    SERIAL,
+    name
+    VARCHAR,
+    PRIMARY
+    KEY
+(
+    id
+)
+    );
 
 CREATE TABLE IF NOT EXISTS
     shelves
 (
-    id          SERIAL,
-    category_id SERIAL,
-    product_id SERIAL,
-    PRIMARY KEY (id),
-    CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES shelf_category (id),
-    CONSTRAINT fk_product_id FOREIGN KEY (product_id) REFERENCES products (id)
-);
+    id
+    SERIAL,
+    category_id
+    SERIAL,
+    product_id
+    SERIAL,
+    PRIMARY
+    KEY
+(
+    id
+),
+    CONSTRAINT fk_category_id FOREIGN KEY
+(
+    category_id
+) REFERENCES shelf_category
+(
+    id
+),
+    CONSTRAINT fk_product_id FOREIGN KEY
+(
+    product_id
+) REFERENCES products
+(
+    id
+)
+    );
 
 CREATE TABLE IF NOT EXISTS
     minishops
 (
-    id SERIAL,
-    category_id SERIAL,
-    product_id SERIAL,
-    PRIMARY KEY (id),
-    CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES minishop_category (id),
-    CONSTRAINT fk_product_id FOREIGN KEY (product_id) REFERENCES products (id)
-);
+    id
+    SERIAL,
+    category_id
+    SERIAL,
+    product_id
+    SERIAL,
+    PRIMARY
+    KEY
+(
+    id
+),
+    CONSTRAINT fk_category_id FOREIGN KEY
+(
+    category_id
+) REFERENCES minishop_category
+(
+    id
+),
+    CONSTRAINT fk_product_id FOREIGN KEY
+(
+    product_id
+) REFERENCES products
+(
+    id
+)
+    );
 
 CREATE TABLE IF NOT EXISTS
     cash_register
 (
-    id                        SERIAL,
-    cash_register_number      SERIAL,
-    local_money_cash_register FLOAT,
-    type_pay_id               SERIAL,
-    type_status_id            SERIAL,
-    PRIMARY KEY (id),
-    CONSTRAINT fk_type_pay FOREIGN KEY (type_pay_id) REFERENCES type_pay (id),
-    CONSTRAINT fk_type_status FOREIGN KEY (type_status_id) REFERENCES type_status (id)
-);
+    id
+    SERIAL,
+    cash_register_number
+    SERIAL,
+    local_money_cash_register
+    FLOAT,
+    type_pay_id
+    SERIAL,
+    type_status_id
+    SERIAL,
+    PRIMARY
+    KEY
+(
+    id
+),
+    CONSTRAINT fk_type_pay FOREIGN KEY
+(
+    type_pay_id
+) REFERENCES type_pay
+(
+    id
+),
+    CONSTRAINT fk_type_status FOREIGN KEY
+(
+    type_status_id
+) REFERENCES type_status
+(
+    id
+)
+    );
 
 INSERT INTO type_pay(type)
 VALUES ('CASH');
@@ -192,21 +281,20 @@ WHERE shelf_category.name = 'Condimente';
 
 
 
+INSERT INTO minishops(product_id, category_id)
+SELECT products.id, minishop_category.id
+FROM products
+         INNER JOIN minishop_category ON minishop_category.name = 'Fructe si legume'
+WHERE products.name = 'Cartofi';
 
 INSERT INTO minishops(product_id, category_id)
 SELECT products.id, minishop_category.id
 FROM products
-        INNER JOIN minishop_category ON minishop_category.name='Fructe si legume'
-WHERE products.name='Cartofi';
+         INNER JOIN minishop_category ON minishop_category.name = 'Fructe si legume'
+WHERE products.name = 'Morcovi';
 
 INSERT INTO minishops(product_id, category_id)
 SELECT products.id, minishop_category.id
 FROM products
-         INNER JOIN minishop_category ON minishop_category.name='Fructe si legume'
-WHERE products.name='Morcovi';
-
-INSERT INTO minishops(product_id, category_id)
-SELECT products.id, minishop_category.id
-FROM products
-         INNER JOIN minishop_category ON minishop_category.name='Fructe si legume'
-WHERE products.name='Portocale';
+         INNER JOIN minishop_category ON minishop_category.name = 'Fructe si legume'
+WHERE products.name = 'Portocale';

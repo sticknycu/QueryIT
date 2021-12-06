@@ -32,7 +32,8 @@ Quality Code - Codiga: https://app.codiga.io/public/project/30198/QueryIT/dashbo
 
 ### FRONT-END
 
+--- Nothing to add for now ---
 
-Implementation future:
+### Implementation future:
 
 - OAuth for Spring for administator accounts support.

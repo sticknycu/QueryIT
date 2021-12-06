@@ -1,0 +1,3 @@
+[submodule "back-end/auth"]
+	path = back-end/auth
+	url = https://github.com/nicugnm/queryit-auth

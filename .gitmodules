@@ -1,3 +1,9 @@
 [submodule "back-end/auth"]
 	path = back-end/auth
 	url = https://github.com/nicugnm/queryit-auth
+[submodule "back-end/core"]
+	path = back-end/core
+	url = https://github.com/nicugnm/queryit-core-backend
+[submodule "front-end/core"]
+	path = front-end/core
+	url = https://github.com/nicugnm/queryit-core-frontend

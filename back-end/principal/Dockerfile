@@ -17,4 +17,4 @@ WORKDIR /src
 
 COPY mvn* pom.xml /src/
 COPY src /src/src
-COPY .mvn /src/.mvn
+COPY ../.mvn /src/.mvn

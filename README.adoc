@@ -31,3 +31,8 @@ Quality Code - Codiga: https://app.codiga.io/public/project/30198/QueryIT/dashbo
 - Every Entity class should implement Serializable
 
 ### FRONT-END
+
+
+Implementation future:
+
+- OAuth for Spring for administator accounts support.

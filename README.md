@@ -13,10 +13,10 @@ Stack used in this project is:
 QueryIT is based on microservices, is not a monolith and looks like that:
 
 ```mermaid
-flowchart LR;
+graph LR
     A[QueryIT] --> B{Backend Core}
-    A[QueryIT] --> C{Backend Auth}
-    A[QueryIT] --> D{Frontend Core}
+    A --> C{Backend Auth}
+    A --> D{Frontend Core}
 ```
 
 Every microservice is part of this project as submodule and can be found on the project, if you click on them and you will be redirected to their repositories where you will found files of every microservice.

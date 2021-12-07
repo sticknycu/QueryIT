@@ -6,7 +6,7 @@ Due the fact that is a faculty project, I tried to implement as much as possible
 Stack used in this project is:
 
 * Java with Spring, Spring Boot, to perform backend part
-* Database is a PostgreSQL, connected using Hibernate and HikariCP (Already implemented by Spring). To acces data from database I used JPA Repositories. I wanted to version database, so I used flyway for that. When application runs, flyway make a call to .sql files. Flyway run then and is database is populated with tables and data. 
+* Database is a PostgreSQL, connected using Hibernate and HikariCP (Already implemented by Spring). To acces data from database I used JPA Repositories. I wanted to version database, so I used flyway for that. When application runs, flyway execute .sql files and database is populated with tables and data. 
 * Typescript with Angular, to perform frontend part
 * I wanted to containerize the app, so I used Docker for that. Due the fact I needed a database, I host database on docker, using one container and another for running the app. This thing is possible having a docker-compose, a thing that Docker uses if I want to have more containers for an app.
 

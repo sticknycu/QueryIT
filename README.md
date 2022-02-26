@@ -12,7 +12,7 @@ Stack used in this project is:
 
 QueryIT is based on microservices, is not a monolith and looks like that:
 
-![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcbiAgICBBW1F1ZXJ5SVRdIC0tPiBCe0JhY2tlbmR9XG4gICAgQiAtLT4gQ1tDb3JlXVxuICAgIEIgLS0-IERbQXV0aF1cbiAgICBBIC0tPiBFe0Zyb250ZW5kfVxuICAgIEUgLS0-IEZbQ29yZV0iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)
+![](https://mermaid.ink/svg/pako:eNpt0MsOgjAQBdBfIbOmP9CFibzUaDAiO-uioaM0ysNaFqTh3y0oRKJdNXNub9MayCqBQOGqeJ07u4SVTr-Wp0ODqt2kZ4eQheMZb-lvSRgH3RgY5r6Jkn2cfoM3QGAe_XmpSVYpnFs4GW90PrdoMsE1H80fbPW3823r305woUBVcCns80w_YaBzLJABtVvB1Y0BKzuba2p7G4ZC6koBvfD7E12wRdWxLTOgWjU4hgLJ7VcVn1T3ArtZZAA)
 
 Every microservice is part of this project as submodule and can be found on the project, if you click on them and you will be redirected to their repositories where you will found files of every microservice.
 

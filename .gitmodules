@@ -7,3 +7,15 @@
 [submodule "front-end/core"]
 	path = front-end/core
 	url = https://github.com/nicugnm/queryit-core-frontend
+[submodule "queryit-data"]
+	path = queryit-data
+	url = https://github.com/nicugnm/queryit-data
+[submodule "back-end/queryit-data"]
+	path = back-end/queryit-data
+	url = https://github.com/nicugnm/queryit-data
+[submodule "back-end/data"]
+	path = back-end/data
+	url = https://github.com/nicugnm/queryit-data
+[submodule "front-end/auth"]
+	path = front-end/auth
+	url = https://github.com/nicugnm/queryit-auth-frontend
